@@ -10,6 +10,7 @@ import UpdateUser from "./UpdateUser";
 
 import axios from "axios";
 
+
 export default function Profile(props) {
   const [Profile, setProfile] = useState([]);
   const { token } = useParams();
@@ -37,67 +38,35 @@ export default function Profile(props) {
       <div
         className="col-md-10
                  col-sm-12 col-xs-12 remove-padd"
-      >
-        <nav className="navbar navbar-default">
-          <div className="navbar-header page-scroll">
-            <button
-              data-target=".navbar-ex1-collapse"
-              data-toggle="collapse"
-              className="navbar-toggle"
-              type="button"
-            >
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar" />
-              <span className="icon-bar" />
-              <span className="icon-bar" />
-            </button>
-          </div>
-          <div className="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
-            <ul className="list-unstyled nav1 cl-effect-10">
-              <li>
-                <a data-hover="Vé đã đặt" href="/profile/userbooking">
-                  <span>Vé đã đặt</span>
-                </a>
-              </li>
-              <li>
-                <a data-hover="GIỚI THIÊU" href="/intro">
-                  <span>GIỚI THIÊU</span>
-                </a>
-              </li>
-              <li>
-                <a data-hover="LỊCH CHIẾU" href="/schedule">
-                  <span>LỊCH CHIẾU</span>
-                </a>
-              </li>
-              {/*<li><a data-hover="LIÊN HOAN PHIM" href="/event"><span>LIÊN HOAN PHIM</span></a></li>*/}
-              <li>
-                <a data-hover="TIN TỨC" href="/news">
-                  <span>TIN TỨC</span>
-                </a>
-              </li>
-              {/* <li><a data-hover="GIÁ VÉ" href="/price"><span>GIÁ VÉ</span></a></li>*/}
-              <li>
-                <a data-hover="THÀNH VIÊN" href="/member">
-                  <span>THÀNH VIÊN</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+      ><div style={{ marginLeft: "10%", fontSize: "100" }}>
+          <div style={{ fontSize: 30 }}> THÔNG TIN CÁ NHÂN </div>
+
+        </div>
+
       </div>
-      <div style={{ marginLeft: "8%" }}>
-        <h2> THÔNG TIN CÁ NHÂN </h2>
-      </div>
+
       <div className="resort-overview-block">
         <div className="container">
           <div className="row">
             <div className="col-md-10 col-sm-12 col-xs-10 ">
               <div className="side-A">
                 <div col-md-9 col-sm-8 col-xs-12 className="film-detail">
-                  <p>First Name: {Profile.user?.firstName}</p>
-                  <p>Last Name: {Profile.user?.lastName}</p>
-                  <p>Email: {Profile.user?.email}</p>
-                  <p>Password: {Profile.user?.password}</p>
+                  <div className="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
+                    <ul className="list-unstyled nav1 cl-effect-10">
+                      <li>
+                        <a href="/profile/userbooking">
+                          <span>Vé đã đặt</span>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+                  <div >
+                    <div style={{ fontSize: 20 }}>First Name: {Profile.user?.firstName}</div>
+                    <div style={{ fontSize: 20 }}>Last Name: {Profile.user?.lastName}</div>
+                    <div style={{ fontSize: 20 }}>Email: {Profile.user?.email}</div>
+                    <div style={{ fontSize: 20}}>Password: {Profile.user?.password}</div>
+                  </div>
                 </div>
               </div>
               <div
